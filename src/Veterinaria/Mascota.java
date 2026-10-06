@@ -70,6 +70,9 @@ public class Mascota {
         System.out.println("Especie: " + especie);
         System.out.println("Edad: " + edad);
         System.out.printf("Peso: %2f kg%n" , peso );
+        if (this.duenio != null) {
+        System.out.println("Dueño: " + this.duenio.getNombre());
+        }
     }
 
     public Cliente getDuenio() {
