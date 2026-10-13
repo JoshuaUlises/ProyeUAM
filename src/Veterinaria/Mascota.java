@@ -8,7 +8,7 @@ package Veterinaria;
  *
  * @author Joshua
  */
-public class Mascota {
+public class Mascota implements Resumible {
    // atributos
     private String nombre;
     private String especie;
@@ -65,15 +65,7 @@ public class Mascota {
         this.peso = peso;
     }
     
-    public void mostrarResumen() {
-        System.out.println("Mascota: " + nombre); 
-        System.out.println("Especie: " + especie);
-        System.out.println("Edad: " + edad);
-        System.out.printf("Peso: %2f kg%n" , peso );
-        if (this.duenio != null) {
-        System.out.println("Dueño: " + this.duenio.getNombre());
-        }
-    }
+    
 
     public Cliente getDuenio() {
         return duenio;
@@ -81,5 +73,18 @@ public class Mascota {
 
     public void setDuenio(Cliente duenio) {
         this.duenio = duenio;
+    }
+
+    @Override
+    public void mostrarResumen() {
+     
+        System.out.println("Mascota: " + nombre); 
+        System.out.println("Especie: " + especie);
+        System.out.println("Edad: " + edad);
+        System.out.printf("Peso: %2f kg%n" , peso );
+        if (this.duenio != null) {
+        System.out.println("Dueño: " + this.duenio.getNombre());
+        }
+    
     }
 }
