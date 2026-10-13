@@ -8,7 +8,7 @@ package Veterinaria;
  *
  * @author Joshua
  */
-public class Consulta {
+public class Consulta implements Resumible  {
     // creacion de atributos
    private String fecha;
    private String motivo;
@@ -89,8 +89,10 @@ public class Consulta {
         setCosto(costo);
         this.motivo= motivo;
     }
-            
-    public void mostrarResumen(){
+
+    @Override
+    public void mostrarResumen() {
+        
         System.out.println("Fecha: " + fecha);
         System.out.println("Motivo " + motivo);
         if(mascota != null) mascota.mostrarResumen();
@@ -98,5 +100,7 @@ public class Consulta {
         System.out.printf("Costo: ₡%.2f%n", costo);
         
     }
+            
+   
     
 }
